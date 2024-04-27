@@ -47,6 +47,7 @@ ExportedObj/
 *.opendb
 *.VC.db
 *.dylib
+*.dll
 
 # Unity3D generated meta files
 *.pidb.meta
