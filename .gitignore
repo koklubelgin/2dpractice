@@ -47,6 +47,7 @@ ExportedObj/
 *.opendb
 *.VC.db
 *.dylib
+*.dll
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -74,3 +75,5 @@ crashlytics-build.properties
 My project/Library/ArtifactDB
 /My project/Library
 My project/Library/ArtifactDB
+bizBırdayız/Library/ArtifactDB
+bizBırdayız/Library/ArtifactDB

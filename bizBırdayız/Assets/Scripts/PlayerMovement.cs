@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         Debug.Log(numberOfJumps);
+        Jump();
     }
 
     private void Awake()
@@ -32,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         {
             direction = ctx.ReadValue<float>();
         };
-        controls.Land.Jump.performed += ctx => Jump();
+       // controls.Land.Jump.performed += ctx => Jump();
     }
     // Start is called before the first frame update
    
@@ -64,19 +66,23 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        if (isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
-            numberOfJumps = 1; 
-        }
-        else
-        {
-            if (numberOfJumps < 2) 
+            if (isGrounded)
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
-                numberOfJumps++;
+                numberOfJumps = 1;
+            }
+            else
+            {
+                if (numberOfJumps < 2)
+                {
+                    playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+                    numberOfJumps++;
+                }
             }
         }
+       
     }
 
 
