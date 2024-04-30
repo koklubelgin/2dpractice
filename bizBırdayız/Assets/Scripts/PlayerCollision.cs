@@ -12,5 +12,15 @@ public class PlayerCollision : MonoBehaviour
             PlayerManager.isGameOver = true;
             gameObject.SetActive(false);
         }
+
+
+        if(collision.transform.tag == "Water")
+        {
+            PlayerManager.isGameOver = true;
+            gameObject.SetActive(false);
+        }
     }
+
+
+
 }
