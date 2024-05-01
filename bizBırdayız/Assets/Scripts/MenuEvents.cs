@@ -9,4 +9,13 @@ public class MenuEvents : MonoBehaviour
     {
         SceneManager.LoadScene(index);
     }
+
+    private void Start()
+    {
+        Time.timeScale = 1;
+
+    }
 }
+
+
+
